@@ -374,7 +374,6 @@ def show_stats(game_vars):
 #----------------------------------------------------------------------
 def end_day(game_vars):
     print()
-    variable_crop_prices(seeds, seed_list)
     #Code occurs when game is won, then stops game
     if game_vars['money'] >= 100:
         print(f"""You have ${game_vars['money']} after {game_vars['day']} days.
@@ -392,6 +391,7 @@ You Win!""")
         for col in range(len(farm[0])):
             if farm[row][col][-1].isdigit() and farm[row][col][-1] != '0':    
                 farm[row][col] = farm[row][col][:3] + str(int(farm[row][col][-1]) - 1)
+    variable_crop_prices(seeds, seed_list)
 
 def variable_crop_prices(seeds, seed_list):
     for i in range(len(seed_list)):
